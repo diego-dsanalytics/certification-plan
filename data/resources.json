@@ -1,0 +1,37 @@
+{
+  "groups": [
+    {
+      "id": "official",
+      "name": "Official Microsoft & GitHub",
+      "items": [
+        { "title": "Microsoft Certifications Poster", "url": "https://aka.ms/CertificationsPoster", "note": "The source map for this plan (Aug 2026)." },
+        { "title": "Explore Microsoft credentials", "url": "https://aka.ms/ExploreCredentials", "note": "Browse every certification by role, product and level." },
+        { "title": "Renew your Microsoft certification", "url": "https://learn.microsoft.com/en-us/credentials/certifications/renew-your-microsoft-certification", "note": "Associate certifications renew yearly with a free online assessment." },
+        { "title": "About beta exams", "url": "https://learn.microsoft.com/en-us/credentials/support/about-beta-exams", "note": "How beta scoring works. Relevant for GH-700." },
+        { "title": "Exam sandbox", "url": "https://aka.ms/examdemo", "note": "Try the exam interface before exam day." },
+        { "title": "Power BI documentation", "url": "https://learn.microsoft.com/en-us/power-bi/" },
+        { "title": "Microsoft Fabric documentation", "url": "https://learn.microsoft.com/en-us/fabric/" },
+        { "title": "GitHub Copilot documentation", "url": "https://docs.github.com/copilot" }
+      ]
+    },
+    {
+      "id": "community",
+      "name": "Community & practice",
+      "items": [
+        { "title": "Microsoft Fabric Blog", "url": "https://www.microsoft.com/microsoft-fabric/blog/" },
+        { "title": "GitHub Blog", "url": "https://github.blog/" },
+        { "title": "Exam Readiness Zone (videos)", "url": "https://learn.microsoft.com/en-us/shows/exam-readiness-zone/" }
+      ]
+    },
+    {
+      "id": "internal",
+      "name": "CoE internal",
+      "items": [
+        { "title": "To be added: CoE study group calendar", "url": "", "note": "Placeholder, to be discussed." },
+        { "title": "To be added: Power BI development standards (Git, .pbip, naming)", "url": "", "note": "Placeholder, to be discussed." },
+        { "title": "To be added: Copilot prompt and instruction-file library", "url": "", "note": "Placeholder, to be discussed." },
+        { "title": "To be added: exam voucher and reimbursement process", "url": "", "note": "Placeholder, to be discussed." }
+      ]
+    }
+  ]
+}
