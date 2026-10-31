@@ -388,8 +388,12 @@ a { color: var(--focus); }
   box-shadow: var(--shadow-lg); overflow-y: auto; animation: slide .25s ease;
   border-left: 1px solid var(--border);
 }
-.drawer__close { position: sticky; top: 14px; float: right; margin: 14px 14px 0 0; z-index: 2; }
-.drawer__body { padding: 28px 24px 40px; }
+.drawer__bar {
+  position: sticky; top: 0; z-index: 2; display: flex; justify-content: flex-end;
+  padding: 12px 14px; background: color-mix(in srgb, var(--surface) 92%, transparent);
+  backdrop-filter: blur(6px);
+}
+.drawer__body { padding: 0 24px 40px; }
 .drawer__hero { padding: 0 0 18px; border-bottom: 1px solid var(--border); margin-bottom: 18px; }
 .drawer__hero .node__code { font-size: 1.05rem; }
 .drawer__hero h2 { font-size: 1.5rem; margin: 6px 0 10px; }
