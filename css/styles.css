@@ -190,7 +190,7 @@ a { color: var(--focus); }
 .tracks-card__path b.req { background: var(--gold); color: #1c1d21; border-color: var(--gold); }
 .tracks-card__path i { color: var(--text-muted); font-style: normal; }
 .tracks-card__path em { color: var(--text-muted); font-family: var(--font); font-size: .8rem; }
-.chip { display: inline-block; width: max-content; font-size: .75rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+.chip { display: inline-block; width: max-content; white-space: nowrap; flex: none; font-size: .75rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
 .chip--data { background: var(--data-soft); color: var(--data-ink); }
 .chip--ai { background: var(--ai-soft); color: var(--ai-ink); }
 .chip--explore { background: var(--explore-soft); color: var(--explore-ink); }

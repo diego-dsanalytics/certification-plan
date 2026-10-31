@@ -296,7 +296,7 @@
         el("ul", { class: "links" },
           cert.learningPaths.length
             ? cert.learningPaths.map(lp => linkItem(lp.title, lp.url))
-            : linkItem("See \"Two ways to prepare\" on the exam page", `${cert.examUrl}#two-ways-to-prepare`))),
+            : linkItem("See \"Study resources\" in the study guide", `${cert.studyGuideUrl}#study-resources`))),
 
       (before.length || after.length) ? el("section", {}, el("h3", {}, "Where it sits in the path"),
         before.length ? el("p", { class: "muted" }, "Take before:") : null,

@@ -22,30 +22,81 @@
     }
   ],
   "levels": [
-    { "id": "foundations", "name": "Foundations", "hint": "Build vocabulary and confidence" },
-    { "id": "core", "name": "Core", "hint": "The certifications that define the role" },
-    { "id": "advanced", "name": "Advanced", "hint": "Depth, scale and specialization" }
+    {
+      "id": "foundations",
+      "name": "Foundations",
+      "hint": "Build vocabulary and confidence"
+    },
+    {
+      "id": "core",
+      "name": "Core",
+      "hint": "The certifications that define the role"
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced",
+      "hint": "Depth, scale and specialization"
+    }
   ],
   "priorities": [
-    { "id": "mandatory", "name": "Mandatory", "hint": "Expected for everyone in the persona" },
-    { "id": "recommended", "name": "Recommended", "hint": "Strongly encouraged next step" },
-    { "id": "optional", "name": "Optional", "hint": "Valuable, take it if it fits your goals" },
-    { "id": "explore", "name": "Explore", "hint": "Outside the core plan, for specific interests" }
+    {
+      "id": "mandatory",
+      "name": "Mandatory",
+      "hint": "Expected for everyone in the persona"
+    },
+    {
+      "id": "recommended",
+      "name": "Recommended",
+      "hint": "Strongly encouraged next step"
+    },
+    {
+      "id": "optional",
+      "name": "Optional",
+      "hint": "Valuable, take it if it fits your goals"
+    },
+    {
+      "id": "explore",
+      "name": "Explore",
+      "hint": "Outside the core plan, for specific interests"
+    }
   ],
   "personas": [
     {
       "id": "bi-dev",
       "name": "Power BI Developer",
       "summary": "Builds semantic models and reports, owns DAX and Power Query, and increasingly works in Git with GitHub Copilot as a pair programmer.",
-      "route": ["PL-300", "GH-900", "DP-600", "GH-300", "GH-700"],
-      "optional": ["DP-900", "AI-901", "GH-600", "AB-730"]
+      "route": [
+        "PL-300",
+        "GH-900",
+        "DP-600",
+        "GH-300",
+        "GH-700"
+      ],
+      "optional": [
+        "DP-900",
+        "AI-901",
+        "GH-600",
+        "AB-730"
+      ]
     },
     {
       "id": "fabric-eng",
       "name": "Analytics / Fabric Engineer",
       "summary": "Takes Power BI to enterprise scale in Fabric: lakehouses, warehouses, pipelines, CI/CD, and agent-assisted engineering workflows.",
-      "route": ["PL-300", "DP-600", "GH-900", "GH-300", "DP-700", "GH-600"],
-      "optional": ["DP-900", "AI-901", "DP-800", "DP-750"]
+      "route": [
+        "PL-300",
+        "DP-600",
+        "GH-900",
+        "GH-300",
+        "DP-700",
+        "GH-600"
+      ],
+      "optional": [
+        "DP-900",
+        "AI-901",
+        "DP-800",
+        "DP-750"
+      ]
     }
   ],
   "certifications": [
@@ -57,16 +108,31 @@
       "priority": "optional",
       "status": "live",
       "issuer": "Microsoft",
-      "personas": ["bi-dev", "fabric-eng"],
+      "personas": [
+        "bi-dev",
+        "fabric-eng"
+      ],
       "prerequisites": [],
       "recommendedBefore": [],
       "whyForUs": "Gives you the vocabulary of the wider data platform: relational versus non-relational data, transactional versus analytical workloads, lakehouses, streaming, and where Power BI fits. It's a good warm-up if you have never taken a Microsoft exam.",
       "audience": "Anyone starting to work with data in the cloud.",
       "skills": [
-        { "name": "Describe core data concepts", "weight": "25–30%" },
-        { "name": "Relational data on Azure", "weight": "20–25%" },
-        { "name": "Non-relational data on Azure", "weight": "15–20%" },
-        { "name": "Analytics workloads (Fabric, Databricks, Power BI)", "weight": "25–30%" }
+        {
+          "name": "Describe core data concepts",
+          "weight": "25–30%"
+        },
+        {
+          "name": "Relational data on Azure",
+          "weight": "20–25%"
+        },
+        {
+          "name": "Non-relational data on Azure",
+          "weight": "15–20%"
+        },
+        {
+          "name": "Analytics workloads (Fabric, Databricks, Power BI)",
+          "weight": "25–30%"
+        }
       ],
       "validity": "Does not expire (Fundamentals)",
       "effort": "10–15 h",
@@ -74,10 +140,22 @@
       "studyGuideUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-900",
       "practiceUrl": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-900/practice/assessment?assessment-type=practice&assessmentId=24",
       "learningPaths": [
-        { "title": "Explore core data concepts", "url": "https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-core-data-concepts/" },
-        { "title": "Explore relational data in Azure", "url": "https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-relational-data/" },
-        { "title": "Explore non-relational data in Azure", "url": "https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-non-relational-data/" },
-        { "title": "Explore data analytics in Azure", "url": "https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-data-warehouse-analytics/" }
+        {
+          "title": "Explore core data concepts",
+          "url": "https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-core-data-concepts/"
+        },
+        {
+          "title": "Explore relational data in Azure",
+          "url": "https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-relational-data/"
+        },
+        {
+          "title": "Explore non-relational data in Azure",
+          "url": "https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-non-relational-data/"
+        },
+        {
+          "title": "Explore data analytics in Azure",
+          "url": "https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-data-warehouse-analytics/"
+        }
       ]
     },
     {
@@ -88,16 +166,33 @@
       "priority": "mandatory",
       "status": "live",
       "issuer": "Microsoft",
-      "personas": ["bi-dev", "fabric-eng"],
+      "personas": [
+        "bi-dev",
+        "fabric-eng"
+      ],
       "prerequisites": [],
-      "recommendedBefore": ["DP-900"],
+      "recommendedBefore": [
+        "DP-900"
+      ],
       "whyForUs": "The baseline for the CoE. It validates Power Query, data modeling, DAX, report design, and workspace security. The April 2026 update adds Copilot for report pages, narrative visuals, and model summaries, so AI is now part of the core analyst skill set.",
       "audience": "Power BI analysts and developers who prepare, model, visualize, and secure data.",
       "skills": [
-        { "name": "Prepare the data", "weight": "25–30%" },
-        { "name": "Model the data", "weight": "25–30%" },
-        { "name": "Visualize and analyze the data", "weight": "25–30%" },
-        { "name": "Manage and secure Power BI", "weight": "15–20%" }
+        {
+          "name": "Prepare the data",
+          "weight": "25–30%"
+        },
+        {
+          "name": "Model the data",
+          "weight": "25–30%"
+        },
+        {
+          "name": "Visualize and analyze the data",
+          "weight": "25–30%"
+        },
+        {
+          "name": "Manage and secure Power BI",
+          "weight": "15–20%"
+        }
       ],
       "validity": "12 months, free online renewal",
       "effort": "40–60 h",
@@ -105,11 +200,26 @@
       "studyGuideUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/pl-300",
       "practiceUrl": "https://aka.ms/PL300-PA",
       "learningPaths": [
-        { "title": "Get started with Microsoft data analytics", "url": "https://learn.microsoft.com/en-us/training/paths/data-analytics-microsoft/" },
-        { "title": "Prepare data for analysis with Power BI", "url": "https://learn.microsoft.com/en-us/training/paths/prepare-data-power-bi/" },
-        { "title": "Model data with Power BI", "url": "https://learn.microsoft.com/en-us/training/paths/model-data-power-bi/" },
-        { "title": "Build Power BI visuals and reports", "url": "https://learn.microsoft.com/en-us/training/paths/build-power-bi-visuals-reports/" },
-        { "title": "Manage workspaces and semantic models in Power BI", "url": "https://learn.microsoft.com/en-us/training/paths/manage-workspaces-datasets-power-bi/" }
+        {
+          "title": "Get started with Microsoft data analytics",
+          "url": "https://learn.microsoft.com/en-us/training/paths/data-analytics-microsoft/"
+        },
+        {
+          "title": "Prepare data for analysis with Power BI",
+          "url": "https://learn.microsoft.com/en-us/training/paths/prepare-data-power-bi/"
+        },
+        {
+          "title": "Model data with Power BI",
+          "url": "https://learn.microsoft.com/en-us/training/paths/model-data-power-bi/"
+        },
+        {
+          "title": "Design effective reports in Power BI",
+          "url": "https://learn.microsoft.com/en-us/training/paths/power-bi-effective/"
+        },
+        {
+          "title": "Manage and secure Power BI",
+          "url": "https://learn.microsoft.com/en-us/training/paths/manage-secure-power-bi/"
+        }
       ]
     },
     {
@@ -120,16 +230,33 @@
       "priority": "recommended",
       "status": "live",
       "issuer": "Microsoft",
-      "personas": ["bi-dev", "fabric-eng"],
+      "personas": [
+        "bi-dev",
+        "fabric-eng"
+      ],
       "prerequisites": [],
-      "recommendedBefore": ["PL-300"],
+      "recommendedBefore": [
+        "PL-300"
+      ],
       "whyForUs": "The natural next step after PL-300. It covers enterprise Power BI in Fabric: Direct Lake, lakehouses and warehouses, large semantic models, calculation groups, Git integration with .pbip files, deployment pipelines, and the XMLA endpoint.",
       "audience": "Experienced data professionals who design and deploy enterprise-scale analytics in Fabric.",
       "skills": [
-        { "name": "Plan, implement and manage an analytics solution", "weight": "10–15%" },
-        { "name": "Prepare and serve data", "weight": "40–45%" },
-        { "name": "Implement and manage semantic models", "weight": "20–25%" },
-        { "name": "Explore and analyze data", "weight": "20–25%" }
+        {
+          "name": "Plan, implement and manage an analytics solution",
+          "weight": "10–15%"
+        },
+        {
+          "name": "Prepare and serve data",
+          "weight": "40–45%"
+        },
+        {
+          "name": "Implement and manage semantic models",
+          "weight": "20–25%"
+        },
+        {
+          "name": "Explore and analyze data",
+          "weight": "20–25%"
+        }
       ],
       "validity": "12 months, free online renewal",
       "effort": "50–70 h",
@@ -137,10 +264,22 @@
       "studyGuideUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-600",
       "practiceUrl": "https://aka.ms/DP600-PA",
       "learningPaths": [
-        { "title": "Get started with Microsoft Fabric", "url": "https://learn.microsoft.com/en-us/training/paths/get-started-fabric/" },
-        { "title": "Ingest data with Microsoft Fabric", "url": "https://learn.microsoft.com/en-us/training/paths/ingest-data-with-microsoft-fabric/" },
-        { "title": "Implement a data warehouse with Microsoft Fabric", "url": "https://learn.microsoft.com/en-us/training/paths/work-with-data-warehouses-using-microsoft-fabric/" },
-        { "title": "Work with semantic models in Microsoft Fabric", "url": "https://learn.microsoft.com/en-us/training/paths/work-semantic-models-microsoft-fabric/" }
+        {
+          "title": "Get started with Microsoft Fabric",
+          "url": "https://learn.microsoft.com/en-us/training/paths/get-started-fabric/"
+        },
+        {
+          "title": "Ingest data with Microsoft Fabric",
+          "url": "https://learn.microsoft.com/en-us/training/paths/ingest-data-with-microsoft-fabric/"
+        },
+        {
+          "title": "Implement a data warehouse with Microsoft Fabric",
+          "url": "https://learn.microsoft.com/en-us/training/paths/work-with-data-warehouses-using-microsoft-fabric/"
+        },
+        {
+          "title": "Design and manage semantic models in Microsoft Fabric",
+          "url": "https://learn.microsoft.com/en-us/training/paths/design-manage-semantic-models-fabric/"
+        }
       ]
     },
     {
@@ -151,15 +290,28 @@
       "priority": "optional",
       "status": "live",
       "issuer": "Microsoft",
-      "personas": ["fabric-eng"],
+      "personas": [
+        "fabric-eng"
+      ],
       "prerequisites": [],
-      "recommendedBefore": ["DP-600"],
+      "recommendedBefore": [
+        "DP-600"
+      ],
       "whyForUs": "Takes you out of the report layer and into data architecture and engineering: loading patterns, orchestration, Spark, KQL, streaming, monitoring, and optimization. It helps Power BI developers understand and influence what happens upstream of their models.",
       "audience": "Data professionals who ingest, transform, secure, and operate data engineering solutions in Fabric.",
       "skills": [
-        { "name": "Implement and manage an analytics solution", "weight": "30–35%" },
-        { "name": "Ingest and transform data", "weight": "30–35%" },
-        { "name": "Monitor and optimize an analytics solution", "weight": "30–35%" }
+        {
+          "name": "Implement and manage an analytics solution",
+          "weight": "30–35%"
+        },
+        {
+          "name": "Ingest and transform data",
+          "weight": "30–35%"
+        },
+        {
+          "name": "Monitor and optimize an analytics solution",
+          "weight": "30–35%"
+        }
       ],
       "validity": "12 months, free online renewal",
       "effort": "50–70 h",
@@ -167,9 +319,18 @@
       "studyGuideUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-700",
       "practiceUrl": "",
       "learningPaths": [
-        { "title": "Ingest data with Microsoft Fabric", "url": "https://learn.microsoft.com/en-us/training/paths/ingest-data-with-microsoft-fabric/" },
-        { "title": "Implement Real-Time Intelligence with Microsoft Fabric", "url": "https://learn.microsoft.com/en-us/training/paths/explore-real-time-analytics-microsoft-fabric/" },
-        { "title": "Implement a data warehouse with Microsoft Fabric", "url": "https://learn.microsoft.com/en-us/training/paths/work-with-data-warehouses-using-microsoft-fabric/" }
+        {
+          "title": "Ingest data with Microsoft Fabric",
+          "url": "https://learn.microsoft.com/en-us/training/paths/ingest-data-with-microsoft-fabric/"
+        },
+        {
+          "title": "Implement Real-Time Intelligence with Microsoft Fabric",
+          "url": "https://learn.microsoft.com/en-us/training/paths/explore-real-time-analytics-microsoft-fabric/"
+        },
+        {
+          "title": "Implement a data warehouse with Microsoft Fabric",
+          "url": "https://learn.microsoft.com/en-us/training/paths/work-with-data-warehouses-using-microsoft-fabric/"
+        }
       ]
     },
     {
@@ -180,14 +341,23 @@
       "priority": "optional",
       "status": "new",
       "issuer": "Microsoft",
-      "personas": ["bi-dev", "fabric-eng"],
+      "personas": [
+        "bi-dev",
+        "fabric-eng"
+      ],
       "prerequisites": [],
       "recommendedBefore": [],
       "whyForUs": "Explains how generative and agentic AI work: models, prompts, responsible AI, and building a simple agent in Microsoft Foundry. It gives you the concepts behind every Copilot feature you use. AI-901 replaced AI-900 in 2026.",
       "audience": "People starting out with AI solutions in Azure. Some Python helps.",
       "skills": [
-        { "name": "Identify AI concepts and capabilities", "weight": "40–45%" },
-        { "name": "Implement AI solutions by using Microsoft Foundry", "weight": "55–60%" }
+        {
+          "name": "Identify AI concepts and capabilities",
+          "weight": "40–45%"
+        },
+        {
+          "name": "Implement AI solutions by using Microsoft Foundry",
+          "weight": "55–60%"
+        }
       ],
       "validity": "Does not expire (Fundamentals)",
       "effort": "10–15 h",
@@ -195,8 +365,14 @@
       "studyGuideUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-901",
       "practiceUrl": "https://aiskillsnavigator.microsoft.com/credentials/cert-83587e0a0754cfee561ade3e27d9fa1cdaf15ae03be52d2413b2b858d1b4eda4",
       "learningPaths": [
-        { "title": "Introduction to AI concepts", "url": "https://learn.microsoft.com/en-us/training/paths/ai-concepts/" },
-        { "title": "Get started with AI apps and agents", "url": "https://learn.microsoft.com/en-us/training/paths/get-started-ai-apps-agents/" }
+        {
+          "title": "Introduction to AI concepts",
+          "url": "https://learn.microsoft.com/en-us/training/paths/ai-concepts/"
+        },
+        {
+          "title": "Get started with AI apps and agents",
+          "url": "https://learn.microsoft.com/en-us/training/paths/get-started-ai-apps-agents/"
+        }
       ]
     },
     {
@@ -207,28 +383,58 @@
       "priority": "recommended",
       "status": "live",
       "issuer": "GitHub",
-      "personas": ["bi-dev", "fabric-eng"],
+      "personas": [
+        "bi-dev",
+        "fabric-eng"
+      ],
       "prerequisites": [],
       "recommendedBefore": [],
       "whyForUs": "Git and GitHub are now part of Power BI work: .pbip projects, Fabric Git integration, pull requests, and Copilot all depend on them. This is the fastest way to get comfortable with repositories, branches, PRs, and GitHub Projects.",
       "audience": "All GitHub users, developers or not.",
       "skills": [
-        { "name": "Git and GitHub basics", "weight": "25–30%" },
-        { "name": "Work with repositories", "weight": "10–15%" },
-        { "name": "Collaborate using GitHub", "weight": "10–15%" },
-        { "name": "Modern development practices", "weight": "10–15%" },
-        { "name": "Manage projects with GitHub", "weight": "5–10%" },
-        { "name": "Privacy, security and administration", "weight": "10–15%" },
-        { "name": "The GitHub community", "weight": "5–10%" }
+        {
+          "name": "Git and GitHub basics",
+          "weight": "25–30%"
+        },
+        {
+          "name": "Work with repositories",
+          "weight": "10–15%"
+        },
+        {
+          "name": "Collaborate using GitHub",
+          "weight": "10–15%"
+        },
+        {
+          "name": "Modern development practices",
+          "weight": "10–15%"
+        },
+        {
+          "name": "Manage projects with GitHub",
+          "weight": "5–10%"
+        },
+        {
+          "name": "Privacy, security and administration",
+          "weight": "10–15%"
+        },
+        {
+          "name": "The GitHub community",
+          "weight": "5–10%"
+        }
       ],
       "validity": "2 years",
       "effort": "10–15 h",
-      "examUrl": "https://learn.microsoft.com/en-us/credentials/certifications/exams/gh-900/",
+      "examUrl": "https://learn.microsoft.com/en-us/credentials/certifications/github-foundations/",
       "studyGuideUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-900",
       "practiceUrl": "",
       "learningPaths": [
-        { "title": "GitHub Foundations, part 1 of 2", "url": "https://learn.microsoft.com/en-us/training/paths/github-foundations/" },
-        { "title": "GitHub Foundations, part 2 of 2", "url": "https://learn.microsoft.com/en-us/training/paths/github-foundations-2/" }
+        {
+          "title": "GitHub Foundations, part 1 of 2",
+          "url": "https://learn.microsoft.com/en-us/training/paths/github-foundations/"
+        },
+        {
+          "title": "GitHub Foundations, part 2 of 2",
+          "url": "https://learn.microsoft.com/en-us/training/paths/github-foundations-2/"
+        }
       ]
     },
     {
@@ -239,60 +445,124 @@
       "priority": "recommended",
       "status": "live",
       "issuer": "GitHub",
-      "personas": ["bi-dev", "fabric-eng"],
+      "personas": [
+        "bi-dev",
+        "fabric-eng"
+      ],
       "prerequisites": [],
-      "recommendedBefore": ["GH-900"],
+      "recommendedBefore": [
+        "GH-900"
+      ],
       "whyForUs": "We already use GitHub Copilot, and this certification covers using it well: agent mode, MCP, the Copilot CLI, prompt and context crafting, instruction files, code review, content exclusions, and responsible use. It applies directly to DAX, M, SQL, PySpark, and TMDL work.",
       "audience": "Developers and technical users who already know GitHub fundamentals.",
       "skills": [
-        { "name": "Use GitHub Copilot responsibly", "weight": "15–20%" },
-        { "name": "Use GitHub Copilot features", "weight": "25–30%" },
-        { "name": "Copilot data and architecture", "weight": "10–15%" },
-        { "name": "Prompt engineering and context crafting", "weight": "10–15%" },
-        { "name": "Developer productivity", "weight": "10–15%" },
-        { "name": "Privacy, content exclusions and safeguards", "weight": "10–15%" }
+        {
+          "name": "Use GitHub Copilot responsibly",
+          "weight": "15–20%"
+        },
+        {
+          "name": "Use GitHub Copilot features",
+          "weight": "25–30%"
+        },
+        {
+          "name": "Copilot data and architecture",
+          "weight": "10–15%"
+        },
+        {
+          "name": "Prompt engineering and context crafting",
+          "weight": "10–15%"
+        },
+        {
+          "name": "Developer productivity",
+          "weight": "10–15%"
+        },
+        {
+          "name": "Privacy, content exclusions and safeguards",
+          "weight": "10–15%"
+        }
       ],
       "validity": "2 years",
       "effort": "15–25 h",
-      "examUrl": "https://learn.microsoft.com/en-us/credentials/certifications/exams/gh-300/",
+      "examUrl": "https://learn.microsoft.com/en-us/credentials/certifications/github-copilot/",
       "studyGuideUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300",
       "practiceUrl": "",
       "learningPaths": [
-        { "title": "GitHub Copilot Fundamentals, part 1 of 2", "url": "https://learn.microsoft.com/en-us/training/paths/copilot/" },
-        { "title": "GitHub Copilot Fundamentals, part 2 of 2", "url": "https://learn.microsoft.com/en-us/training/paths/gh-copilot-2/" },
-        { "title": "Accelerate app development by using GitHub Copilot", "url": "https://learn.microsoft.com/en-us/training/paths/accelerate-app-development-using-github-copilot/" }
+        {
+          "title": "GitHub Copilot Fundamentals, part 1 of 2",
+          "url": "https://learn.microsoft.com/en-us/training/paths/copilot/"
+        },
+        {
+          "title": "GitHub Copilot Fundamentals, part 2 of 2",
+          "url": "https://learn.microsoft.com/en-us/training/paths/gh-copilot-2/"
+        },
+        {
+          "title": "Accelerate app development by using GitHub Copilot",
+          "url": "https://learn.microsoft.com/en-us/training/paths/accelerate-app-development-using-github-copilot/"
+        }
       ]
     },
     {
       "code": "GH-600",
-      "title": "GitHub Agentic AI Developer",
+      "title": "GitHub Certified: Agentic AI Developer",
       "track": "ai",
       "level": "advanced",
       "priority": "optional",
       "status": "new",
       "issuer": "GitHub",
-      "personas": ["fabric-eng", "bi-dev"],
+      "personas": [
+        "fabric-eng",
+        "bi-dev"
+      ],
       "prerequisites": [],
-      "recommendedBefore": ["GH-300"],
+      "recommendedBefore": [
+        "GH-300"
+      ],
       "whyForUs": "The developer-level next step after GH-300. It covers running AI agents inside the delivery lifecycle: planning versus execution, tools and MCP servers, memory and state, evaluation, multi-agent orchestration, and guardrails. Choose it if you build or automate pipelines and repositories.",
       "audience": "Engineers who operate, supervise, and govern coding agents in production SDLC workflows.",
       "skills": [
-        { "name": "Agent architecture and SDLC processes", "weight": "15–20%" },
-        { "name": "Tool use and environment interaction", "weight": "20–25%" },
-        { "name": "Memory, state and execution", "weight": "10–15%" },
-        { "name": "Evaluation, error analysis and tuning", "weight": "15–20%" },
-        { "name": "Multi-agent coordination", "weight": "15–20%" },
-        { "name": "Guardrails and accountability", "weight": "10–15%" }
+        {
+          "name": "Agent architecture and SDLC processes",
+          "weight": "15–20%"
+        },
+        {
+          "name": "Tool use and environment interaction",
+          "weight": "20–25%"
+        },
+        {
+          "name": "Memory, state and execution",
+          "weight": "10–15%"
+        },
+        {
+          "name": "Evaluation, error analysis and tuning",
+          "weight": "15–20%"
+        },
+        {
+          "name": "Multi-agent coordination",
+          "weight": "15–20%"
+        },
+        {
+          "name": "Guardrails and accountability",
+          "weight": "10–15%"
+        }
       ],
       "validity": "2 years",
       "effort": "30–40 h",
-      "examUrl": "https://learn.microsoft.com/en-us/credentials/certifications/exams/gh-600/",
+      "examUrl": "https://learn.microsoft.com/en-us/credentials/certifications/agentic-ai-developer/",
       "studyGuideUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600",
       "practiceUrl": "",
       "learningPaths": [
-        { "title": "Foundations of agentic AI in GitHub (module)", "url": "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/" },
-        { "title": "Designing agent architecture and SDLC integration (module)", "url": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/" },
-        { "title": "Tooling, MCP, and agent execution environments (module)", "url": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/" }
+        {
+          "title": "Foundations of agentic AI in GitHub (module)",
+          "url": "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/"
+        },
+        {
+          "title": "Designing agent architecture and SDLC integration (module)",
+          "url": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/"
+        },
+        {
+          "title": "Tooling, MCP, and agent execution environments (module)",
+          "url": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/"
+        }
       ]
     },
     {
@@ -303,24 +573,43 @@
       "priority": "optional",
       "status": "beta",
       "issuer": "GitHub",
-      "personas": ["bi-dev"],
+      "personas": [
+        "bi-dev"
+      ],
       "prerequisites": [],
-      "recommendedBefore": ["GH-300"],
+      "recommendedBefore": [
+        "GH-300"
+      ],
       "whyForUs": "An alternative to GH-600 for developers who lean towards analysis and delivery rather than software engineering. It covers designing agentic workflows and automations, custom agents and skills, MCP, and human-in-the-loop review, without deep coding. It is not on the August 2026 poster yet and is still in beta.",
       "audience": "Business-leaning roles (BA, PM, TPM) who use GitHub and Copilot to automate work.",
       "skills": [
-        { "name": "Use GitHub platform features", "weight": "20–25%" },
-        { "name": "Enhance productivity with GitHub Copilot", "weight": "20–25%" },
-        { "name": "Design and implement agentic workflows", "weight": "25–30%" },
-        { "name": "Human-in-the-loop for agentic workflows", "weight": "20–25%" }
+        {
+          "name": "Use GitHub platform features",
+          "weight": "20–25%"
+        },
+        {
+          "name": "Enhance productivity with GitHub Copilot",
+          "weight": "20–25%"
+        },
+        {
+          "name": "Design and implement agentic workflows",
+          "weight": "25–30%"
+        },
+        {
+          "name": "Human-in-the-loop for agentic workflows",
+          "weight": "20–25%"
+        }
       ],
       "validity": "2 years",
       "effort": "20–30 h",
-      "examUrl": "https://learn.microsoft.com/en-us/credentials/certifications/exams/gh-700/",
+      "examUrl": "https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification&terms=GH-700",
       "studyGuideUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-700",
       "practiceUrl": "",
       "learningPaths": [
-        { "title": "GitHub Copilot documentation (no Learn path yet)", "url": "https://docs.github.com/copilot" }
+        {
+          "title": "GitHub Copilot documentation (no Learn path yet)",
+          "url": "https://docs.github.com/copilot"
+        }
       ]
     },
     {
@@ -331,16 +620,30 @@
       "priority": "explore",
       "status": "live",
       "issuer": "Microsoft",
-      "personas": ["bi-dev"],
+      "personas": [
+        "bi-dev"
+      ],
       "prerequisites": [],
       "recommendedBefore": [],
       "whyForUs": "Focused on Microsoft 365 Copilot, Copilot Cowork, and prebuilt agents for everyday business work, with no code. It's useful for working with report consumers, but it adds little to development skills. Updated on 20 Oct 2026.",
       "audience": "Business professionals who use M365 Copilot and agents in daily work.",
       "skills": [
-        { "name": "Generative AI fundamentals", "weight": "25–30%" },
-        { "name": "Prompts and chats in M365 Copilot", "weight": "20–25%" },
-        { "name": "Business content and collaboration", "weight": "20–25%" },
-        { "name": "Drive business outcomes with agents", "weight": "20–25%" }
+        {
+          "name": "Generative AI fundamentals",
+          "weight": "25–30%"
+        },
+        {
+          "name": "Prompts and chats in M365 Copilot",
+          "weight": "20–25%"
+        },
+        {
+          "name": "Business content and collaboration",
+          "weight": "20–25%"
+        },
+        {
+          "name": "Drive business outcomes with agents",
+          "weight": "20–25%"
+        }
       ],
       "validity": "12 months, free online renewal",
       "effort": "8–12 h",
@@ -357,19 +660,30 @@
       "priority": "explore",
       "status": "new",
       "issuer": "Microsoft",
-      "personas": ["fabric-eng"],
+      "personas": [
+        "fabric-eng"
+      ],
       "prerequisites": [],
       "recommendedBefore": [],
       "whyForUs": "Combines the two tracks: advanced T-SQL, SQL Database Projects with CI/CD in GitHub, GitHub Copilot and MCP for SQL, embeddings, vector and hybrid search, and RAG, on SQL Server, Azure SQL, and SQL databases in Fabric.",
       "audience": "Database developers who build AI-enabled SQL solutions.",
       "skills": [
-        { "name": "Design and develop database solutions", "weight": "35–40%" },
-        { "name": "Secure, optimize and deploy database solutions", "weight": "35–40%" },
-        { "name": "Implement AI capabilities in database solutions", "weight": "25–30%" }
+        {
+          "name": "Design and develop database solutions",
+          "weight": "35–40%"
+        },
+        {
+          "name": "Secure, optimize and deploy database solutions",
+          "weight": "35–40%"
+        },
+        {
+          "name": "Implement AI capabilities in database solutions",
+          "weight": "25–30%"
+        }
       ],
       "validity": "12 months, free online renewal",
       "effort": "50–70 h",
-      "examUrl": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-800/",
+      "examUrl": "https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification&terms=DP-800",
       "studyGuideUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-800",
       "practiceUrl": "https://aka.ms/DP800-PA",
       "learningPaths": []
@@ -382,24 +696,41 @@
       "priority": "explore",
       "status": "new",
       "issuer": "Microsoft",
-      "personas": ["fabric-eng"],
+      "personas": [
+        "fabric-eng"
+      ],
       "prerequisites": [],
       "recommendedBefore": [],
       "whyForUs": "Relevant if your data platform is Databricks rather than, or alongside, Fabric. It covers Unity Catalog governance, Lakeflow pipelines and jobs, and Databricks Asset Bundles.",
       "audience": "Data engineers who build and operate pipelines in Azure Databricks.",
       "skills": [
-        { "name": "Set up and configure Azure Databricks", "weight": "15–20%" },
-        { "name": "Secure and govern Unity Catalog", "weight": "15–20%" },
-        { "name": "Prepare and process data", "weight": "30–35%" },
-        { "name": "Deploy and maintain pipelines and workloads", "weight": "30–35%" }
+        {
+          "name": "Set up and configure Azure Databricks",
+          "weight": "15–20%"
+        },
+        {
+          "name": "Secure and govern Unity Catalog",
+          "weight": "15–20%"
+        },
+        {
+          "name": "Prepare and process data",
+          "weight": "30–35%"
+        },
+        {
+          "name": "Deploy and maintain pipelines and workloads",
+          "weight": "30–35%"
+        }
       ],
       "validity": "12 months, free online renewal",
       "effort": "50–70 h",
-      "examUrl": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-750/",
+      "examUrl": "https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification&terms=DP-750",
       "studyGuideUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-750",
       "practiceUrl": "https://aka.ms/DP750-PA",
       "learningPaths": [
-        { "title": "Implement a data engineering solution with Azure Databricks", "url": "https://learn.microsoft.com/en-us/training/paths/azure-databricks-data-engineer/" }
+        {
+          "title": "Course DP-750T00: Implement data engineering solutions using Azure Databricks",
+          "url": "https://learn.microsoft.com/en-us/training/courses/dp-750t00"
+        }
       ]
     },
     {
@@ -412,15 +743,32 @@
       "issuer": "Microsoft",
       "personas": [],
       "prerequisites": [],
-      "recommendedBefore": ["AI-901"],
+      "recommendedBefore": [
+        "AI-901"
+      ],
       "whyForUs": "For people who want to move from using AI to building it: RAG, agents, and multi-agent solutions in Microsoft Foundry with Python. It's a career pivot towards AI engineering rather than a Power BI step.",
       "audience": "Azure AI engineers who build and deploy agents and AI apps on Foundry.",
       "skills": [
-        { "name": "Plan and manage an Azure AI solution", "weight": "25–30%" },
-        { "name": "Implement generative AI and agentic solutions", "weight": "30–35%" },
-        { "name": "Implement computer vision solutions", "weight": "10–15%" },
-        { "name": "Implement text analysis solutions", "weight": "10–15%" },
-        { "name": "Implement information extraction solutions", "weight": "10–15%" }
+        {
+          "name": "Plan and manage an Azure AI solution",
+          "weight": "25–30%"
+        },
+        {
+          "name": "Implement generative AI and agentic solutions",
+          "weight": "30–35%"
+        },
+        {
+          "name": "Implement computer vision solutions",
+          "weight": "10–15%"
+        },
+        {
+          "name": "Implement text analysis solutions",
+          "weight": "10–15%"
+        },
+        {
+          "name": "Implement information extraction solutions",
+          "weight": "10–15%"
+        }
       ],
       "validity": "12 months, free online renewal",
       "effort": "50–70 h",
