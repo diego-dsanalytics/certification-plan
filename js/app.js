@@ -29,12 +29,14 @@
     }
   };
 
-  const KEYS = { theme: "coe-cert-theme", persona: "coe-cert-persona" };
+  const KEYS = { theme: "coe-cert-theme", persona: "coe-cert-persona", done: "coe-cert-done" };
 
   const state = {
     data: null,
     byCode: new Map(),
     persona: "all",
+    done: new Set(),
+    openCode: null,
     lastFocus: null
   };
 
@@ -182,6 +184,16 @@
     drawLinks();
   }
 
+  function applyDoneToMap() {
+    document.querySelectorAll(".node").forEach(n => {
+      const done = state.done.has(n.dataset.code);
+      n.querySelector(".node__done")?.remove();
+      if (done) n.append(el("span", { class: "node__done", title: "Earned", "aria-hidden": "true" }, "✓"));
+      const label = n.getAttribute("aria-label").replace(/ Earned\.$/, "");
+      n.setAttribute("aria-label", done ? `${label} Earned.` : label);
+    });
+  }
+
   function drawLinks() {
     const map = $("#cert-map");
     const svg = $("#map-links");
@@ -292,8 +304,14 @@
         after.length ? el("p", { class: "muted", style: "margin-top:12px" }, "Leads to:") : null,
         after.length ? el("div", { class: "related" }, after.map(certPill)) : null) : null,
 
-      el("section", { id: "drawer-progress-slot" })
+      el("section", {}, el("label", { class: "drawer__toggle" },
+        el("input", {
+          type: "checkbox", "data-done": code, checked: state.done.has(code),
+          onchange: e => setDone(code, e.target.checked)
+        }),
+        "I've earned this certification"))
     );
+    state.openCode = code;
 
     const drawer = $("#drawer");
     const wasOpen = !drawer.hidden;
@@ -309,6 +327,7 @@
   function closeDrawer() {
     $("#drawer").hidden = true;
     $("#drawer-scrim").hidden = true;
+    state.openCode = null;
     document.body.style.overflow = "";
     history.replaceState(null, "", location.pathname + location.search);
     state.lastFocus?.focus?.();
@@ -331,9 +350,10 @@
   }
 
   /* ---------- Roadmap ---------- */
+  const roadmapPersona = () => persona(state.persona) || state.data.personas[0];
+
   function renderRoadmap() {
-    const id = persona(state.persona) ? state.persona : state.data.personas[0].id;
-    const p = persona(id);
+    const p = roadmapPersona();
     $("#roadmap-persona").textContent = persona(state.persona) ? p.name : `${p.name} (choose a persona on the map to switch)`;
 
     $("#timeline").replaceChildren(...p.route.map(code => {
@@ -354,6 +374,72 @@
     $("#optional-box").replaceChildren(
       el("h3", {}, "Optional add-ons for this persona"),
       el("div", { class: "pill-row" }, p.optional.map(certPill)));
+    refreshProgress();
+  }
+
+  /* ---------- Progress ---------- */
+  function setDone(code, value) {
+    if (value) state.done.add(code); else state.done.delete(code);
+    store.set(KEYS.done, [...state.done]);
+    refreshProgress();
+  }
+
+  function renderChecklist() {
+    $("#checklist").replaceChildren(...state.data.tracks.map(t =>
+      el("div", { class: "check-group" },
+        el("h3", {}, el("span", { class: `chip chip--${t.id}` }, t.name)),
+        state.data.certifications.filter(c => c.track === t.id).map(c =>
+          el("label", { class: "check" },
+            el("input", { type: "checkbox", "data-done": c.code, onchange: e => setDone(c.code, e.target.checked) }),
+            el("span", {}, el("b", { class: "code" }, c.code), el("small", {}, `${c.title} · ${priority(c.priority).name}`)))))));
+  }
+
+  function ring(label, done, total, color) {
+    const r = 38, circ = 2 * Math.PI * r;
+    const pct = total ? done / total : 0;
+    return el("div", { class: "ring", role: "img", "aria-label": `${label}: ${done} of ${total} earned` },
+      el("span", {
+        html: `<svg viewBox="0 0 92 92" aria-hidden="true"><circle class="ring__bg" cx="46" cy="46" r="${r}"/>` +
+          `<circle class="ring__fg" cx="46" cy="46" r="${r}" stroke="${color}" stroke-dasharray="${circ}" stroke-dashoffset="${circ * (1 - pct)}"/></svg>`
+      }),
+      el("span", { class: "ring__value" }, `${done}/${total}`),
+      el("span", { class: "ring__label" }, label));
+  }
+
+  function refreshProgress() {
+    if (!state.data) return;
+    const isDone = code => state.done.has(code);
+    const p = roadmapPersona();
+
+    document.querySelectorAll("input[data-done]").forEach(i => { i.checked = isDone(i.dataset.done); });
+    document.querySelectorAll("#timeline li").forEach(li => li.classList.toggle("is-done", isDone(li.dataset.code)));
+    applyDoneToMap();
+
+    const trackCerts = id => state.data.certifications.filter(c => c.track === id).map(c => c.code);
+    const count = list => list.filter(isDone).length;
+    $("#rings").replaceChildren(
+      ring(`${p.name} route`, count(p.route), p.route.length, "var(--gold)"),
+      ring("Data & Analytics", count(trackCerts("data")), trackCerts("data").length, "var(--data)"),
+      ring("AI-assisted dev", count(trackCerts("ai")), trackCerts("ai").length, "var(--ai)"));
+
+    const nextCode = p.route.find(c => !isDone(c));
+    const nextOptional = p.optional.find(c => !isDone(c));
+    const next = $("#next-step");
+    if (nextCode) {
+      const c = state.byCode.get(nextCode);
+      next.replaceChildren(
+        el("h3", {}, `Your next step · ${p.name}`),
+        el("p", { class: "big" }, el("span", { class: "code" }, c.code), ` ${c.title}`),
+        el("p", { class: "muted" }, `${priority(c.priority).name} · about ${c.effort} of study.`),
+        el("div", {}, el("button", { type: "button", class: "btn btn--small", onclick: () => openDrawer(c.code) }, "Start studying")));
+    } else {
+      next.replaceChildren(
+        el("h3", {}, p.name),
+        el("p", { class: "big" }, "Route complete. Great work! 🎉"),
+        nextOptional
+          ? el("p", { class: "muted" }, "Want more? Try an optional add-on: ", certPill(nextOptional))
+          : el("p", { class: "muted" }, "You've earned every certification on this route and its add-ons."));
+    }
   }
 
   /* ---------- Resources ---------- */
@@ -394,14 +480,23 @@
 
       const saved = store.get(KEYS.persona, "all");
       state.persona = saved === "all" || persona(saved) ? saved : "all";
+      const savedDone = store.get(KEYS.done, []);
+      state.done = new Set(Array.isArray(savedDone) ? savedDone.filter(c => state.byCode.has(c)) : []);
 
       $("#last-verified").textContent = new Date(data.meta.lastVerified + "T00:00:00")
         .toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
       renderStats();
       renderPersonaSwitch();
       renderMap();
+      renderChecklist();
       setPersona(state.persona);
       renderResources(resources);
+      $("#reset-progress").addEventListener("click", () => {
+        if (!state.done.size || !confirm("Clear all ticked certifications in this browser?")) return;
+        state.done.clear();
+        store.set(KEYS.done, []);
+        refreshProgress();
+      });
 
       const deep = location.hash.match(/^#cert-(.+)$/);
       if (deep) openDrawer(decodeURIComponent(deep[1]));
