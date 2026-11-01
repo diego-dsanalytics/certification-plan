@@ -145,7 +145,7 @@
 
   function badge(cert, cls) {
     if (!cert.badge) return null;
-    return el("img", { class: cls, src: cert.badge, alt: "", width: "48", height: "48", loading: "lazy", decoding: "async" });
+    return el("img", { class: cls, src: cert.badge, alt: "", width: "52", height: "52", loading: "lazy", decoding: "async" });
   }
 
   function renderMap() {
