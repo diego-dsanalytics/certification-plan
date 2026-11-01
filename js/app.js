@@ -491,8 +491,19 @@
       renderChecklist();
       setPersona(state.persona);
       renderResources(resources);
-      $("#reset-progress").addEventListener("click", () => {
-        if (!state.done.size || !confirm("Clear all ticked certifications in this browser?")) return;
+      // Two-step reset: native confirm() is blocked in some embedded viewers.
+      const resetBtn = $("#reset-progress");
+      let resetTimer = null;
+      const disarmReset = () => { clearTimeout(resetTimer); resetBtn.textContent = "Reset"; delete resetBtn.dataset.armed; };
+      resetBtn.addEventListener("click", () => {
+        if (!state.done.size) return;
+        if (!resetBtn.dataset.armed) {
+          resetBtn.dataset.armed = "1";
+          resetBtn.textContent = "Click again to clear";
+          resetTimer = setTimeout(disarmReset, 4000);
+          return;
+        }
+        disarmReset();
         state.done.clear();
         store.set(KEYS.done, []);
         refreshProgress();

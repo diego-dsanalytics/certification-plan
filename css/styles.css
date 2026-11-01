@@ -146,7 +146,7 @@ a { color: var(--focus); }
 
 /* ---------- Top bar ---------- */
 .topbar {
-  position: sticky; top: 0; z-index: 20;
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
   background: color-mix(in srgb, var(--bg) 85%, transparent);
   backdrop-filter: saturate(1.4) blur(10px);
   border-bottom: 1px solid var(--border);
