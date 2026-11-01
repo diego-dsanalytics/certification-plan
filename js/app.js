@@ -132,13 +132,20 @@
       "aria-label": `${cert.code} ${cert.title}. ${priority(cert.priority).name}, ${t.name}. Open details.`,
       onclick: () => openDrawer(cert.code)
     },
-      el("span", { class: "node__top" },
-        el("span", { class: "node__code" }, cert.code),
-        statusTag(cert),
-        cert.issuer === "GitHub" ? el("span", { class: "tag tag--github" }, "GitHub") : null),
-      el("span", { class: "node__title" }, cert.title),
-      el("span", { class: "node__meta" }, el("span", {}, cert.effort))
+      badge(cert, "node__badge"),
+      el("span", { class: "node__body" },
+        el("span", { class: "node__top" },
+          el("span", { class: "node__code" }, cert.code),
+          statusTag(cert),
+          cert.issuer === "GitHub" ? el("span", { class: "tag tag--github" }, "GitHub") : null),
+        el("span", { class: "node__title" }, cert.title),
+        el("span", { class: "node__meta" }, el("span", {}, cert.effort)))
     );
+  }
+
+  function badge(cert, cls) {
+    if (!cert.badge) return null;
+    return el("img", { class: cls, src: cert.badge, alt: "", width: "48", height: "48", loading: "lazy", decoding: "async" });
   }
 
   function renderMap() {
@@ -263,6 +270,7 @@
 
     body.replaceChildren(
       el("div", { class: "drawer__hero" },
+        badge(cert, "drawer__badge"),
         el("span", { class: "node__code", style: `color:${trackColor}` }, cert.code),
         el("h2", { id: "drawer-title" }, cert.title),
         el("div", { class: "drawer__chips" },
@@ -398,11 +406,12 @@
     const r = 38, circ = 2 * Math.PI * r;
     const pct = total ? done / total : 0;
     return el("div", { class: "ring", role: "img", "aria-label": `${label}: ${done} of ${total} earned` },
-      el("span", {
-        html: `<svg viewBox="0 0 92 92" aria-hidden="true"><circle class="ring__bg" cx="46" cy="46" r="${r}"/>` +
-          `<circle class="ring__fg" cx="46" cy="46" r="${r}" stroke="${color}" stroke-dasharray="${circ}" stroke-dashoffset="${circ * (1 - pct)}"/></svg>`
-      }),
-      el("span", { class: "ring__value" }, `${done}/${total}`),
+      el("span", { class: "ring__dial" },
+        el("span", {
+          html: `<svg viewBox="0 0 92 92" aria-hidden="true"><circle class="ring__bg" cx="46" cy="46" r="${r}"/>` +
+            `<circle class="ring__fg" cx="46" cy="46" r="${r}" stroke="${color}" stroke-dasharray="${circ}" stroke-dashoffset="${circ * (1 - pct)}"/></svg>`
+        }),
+        el("span", { class: "ring__value" }, `${done}/${total}`)),
       el("span", { class: "ring__label" }, label));
   }
 
