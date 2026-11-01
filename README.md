@@ -37,6 +37,8 @@ There's no build step. All content lives in two JSON files:
 - [`data/certifications.json`](data/certifications.json): tracks, levels, priorities, personas (`route` gives the order, `optional` lists add-ons) and certifications. Each certification has `track`, `level`, `priority`, `status` (`live` / `new` / `beta`), `recommendedBefore` (drawn as arrows), `whyForUs`, `skills`, `validity`, `effort`, and its links.
 - [`data/resources.json`](data/resources.json): resource groups. An item with an empty `url` shows as a placeholder.
 
+Each certification also has a `badge` path to an image in [`assets/badges/`](assets/badges/). These are the official badge images from its Microsoft Learn page. GH-700 doesn't have a published badge yet, so it uses the generic exam icon, and DP-800 and DP-750 use the Associate badge until their pages go live.
+
 Change `meta.lastVerified` whenever you re-check the data. If a persona or arrow points to a code that doesn't exist, the app logs a warning in the browser console.
 
 ## Hosting options
